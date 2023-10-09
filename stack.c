@@ -8,8 +8,8 @@ void display(int stack[]);
 void main(){
     int val,choice;
     do{
-        printf("stack operation\n");
-        printf("1.press 1 for push\n2.press 2 for pop\n3.press 3 for peek\n4.press 4 for peek\n5.press 5 for exit");
+        printf("\nstack operation\n");
+        printf("1.press 1 for push\n2.press 2 for pop\n3.press 3 for peek\n4.press 4 for peek\n5.press 5 for exit\n");
         scanf("%d",&choice);
         switch (choice)
         {
@@ -46,5 +46,50 @@ void main(){
             break;
         }
     }while (choice!=5);
+}
+void push(int stack[],int val){
+   if (top == max -1)
+   {
+    printf("\nstack overflow");
+   }
+   else{
+    top ++;
+    stack[top] = val;
+   }
+   
+}
+int pop(int stack[])
+{
+    if (top == -1)
+    {
+        printf("\nstack underflow");
+    }
+    else 
+    {
+        return stack[top--];
+    }   
+}
+int peek(int stack[]){
+    if (top == -1)
+    {
+       printf("\nstack  underflow");
+    }
+    else{
+        return stack[top];
+    }
+}
+void display(int stack[]){
+    if (top == -1)
+    {
+        printf("\nstack empty");
+    }
+    else{
+        printf("\nThe stack is displayed here:\n");
+        for (int i = top; i >=0; i--)
+        {
+            printf("%d\n",stack[i]);
+        }
+        
+    }
     
 }

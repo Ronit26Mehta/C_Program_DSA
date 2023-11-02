@@ -175,7 +175,8 @@ struct node *insert_before(struct node *start){
 int val,num;
 struct node *pp,*ptr,*nn;
 printf("\nEnter the value before index and where to insert:");
-scanf("%d %d",&val,&num);
+scanf("%d",&val);
+scanf("%d",&num);
 ptr= start;
 pp= start;
 while (ptr->data!=val)
@@ -195,7 +196,8 @@ struct node *pp,*ptr,*nn;
 ptr= start;
 pp= start;
 printf("\nEnter the value after index and where to insert:");
-scanf("%d %d",&val,&num);
+scanf("%d",&val);
+scanf("%d",&num);
 while (pp -> data !=val)
 {
     pp=ptr;

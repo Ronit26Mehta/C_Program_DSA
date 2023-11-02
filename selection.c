@@ -1,50 +1,49 @@
-#include<stdio.h>
-void selection_sort(int a[],int n);
-void main(){
+#include <stdio.h>
+
+void selectionsort(int a[], int n);
+
+void main() {
     int a[100];
-    int i;
     int n;
-    printf("\n Enter the array Size:");
-    scanf("%d",&n);
-    printf("\n start entering the elements:");
-    for ( i = 0; i < n; i++)
-    {
-        scanf("%d",&a[i]);
-    }
-    printf("\nArray Before Sorting:-");
-    for (int k = 0; k < n; k++)
-    {
-        printf("%d\t",a[k]);
-    }
-    selection_sort(a,n);
-    
-}
-void selection_sort(int a[],int n){
     int i;
-    int j;
-    int min;
-    int t;
-    for ( i = 0; i < n-1; i++)
-    {
-        min = i;
-        for ( j = i+1; j < n; j++)
-        {
-            if(a[j]<a[min]){
+    printf("\nRonit Satish Mehta 60009230207");
+    printf("\nEnter the number of elements to be in an array: ");
+    scanf("%d", &n);
+
+    printf("\nStart entering the numbers of the elements:\n");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    printf("Before sorting:\n");
+    for (int k = 0; k < n; k++) {
+        printf("%d ", a[k]);
+    }
+
+    printf("\nIterations:\n");
+    selectionsort(a, n);
+
+    printf("\nAfter sorting:\n");
+    for (int k = 0; k < n; k++) {
+        printf("%d ", a[k]);
+    }
+
+}
+
+void selectionsort(int a[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        int min = i;
+        for (int j = i + 1; j < n; j++) {
+            if (a[j] < a[min]) {
                 min = j;
             }
         }
-         t = a[i];
-         a[i]= a[min];
-         a[min]=t;
-         printf("\n %d iterations",i);
-        for (int k = 0; k < n; k++)
-        {
-            printf("%d\t",a[k]);
+        int t = a[i];
+        a[i] = a[min];
+        a[min] = t;
+        for (int k = 0; k < n; k++) {
+            printf("%d ", a[k]);
         }
+        printf("\n");
     }
-     printf("\n after sorting the final array:");
-    for(int r = 0;r<n;r++){
-        printf("%d\t",a[r]);
-    }
-
 }
